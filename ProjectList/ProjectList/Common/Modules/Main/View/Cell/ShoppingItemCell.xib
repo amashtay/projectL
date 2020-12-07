@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingItemCell" rowHeight="89" id="KGk-i7-Jjw" customClass="ShoppingItemCell" customModule="ProjectList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="426" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoI-L6-E6s">
+                        <rect key="frame" x="12" y="8" width="402" height="73"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lgN-G1-coc">
+                                <rect key="frame" x="0.0" y="0.0" width="338" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIq-7o-T3a">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="43.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXn-Vt-dg7">
+                                        <rect key="frame" x="0.0" y="43.5" width="338" height="29.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC3-cA-D67">
+                                <rect key="frame" x="338" y="0.0" width="64" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="H2t-VQ-DfU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="lgN-G1-coc" secondAttribute="bottom" id="ORe-fW-I7j"/>
+                            <constraint firstAttribute="trailing" secondItem="NC3-cA-D67" secondAttribute="trailing" id="YEk-pg-RpC"/>
+                            <constraint firstItem="lgN-G1-coc" firstAttribute="leading" secondItem="KoI-L6-E6s" secondAttribute="leading" id="ica-C8-RC3"/>
+                            <constraint firstAttribute="bottom" secondItem="NC3-cA-D67" secondAttribute="bottom" id="qIa-ty-jal"/>
+                            <constraint firstItem="NC3-cA-D67" firstAttribute="top" secondItem="KoI-L6-E6s" secondAttribute="top" id="wjV-iY-gEa"/>
+                            <constraint firstItem="lgN-G1-coc" firstAttribute="top" secondItem="KoI-L6-E6s" secondAttribute="top" id="ydS-nV-v2z"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KoI-L6-E6s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="FKj-Jm-Yvh"/>
+                    <constraint firstItem="KoI-L6-E6s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="FiY-TL-07z"/>
+                    <constraint firstAttribute="trailing" secondItem="KoI-L6-E6s" secondAttribute="trailing" constant="12" id="UOh-DV-xj2"/>
+                    <constraint firstAttribute="bottom" secondItem="KoI-L6-E6s" secondAttribute="bottom" constant="8" id="c8R-d1-cUR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="comment" destination="MXn-Vt-dg7" id="qmk-iT-lLY"/>
+                <outlet property="count" destination="NC3-cA-D67" id="70H-aA-1uU"/>
+                <outlet property="title" destination="OIq-7o-T3a" id="LJV-iW-w2o"/>
+            </connections>
+            <point key="canvasLocation" x="214.49275362318843" y="129.57589285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
