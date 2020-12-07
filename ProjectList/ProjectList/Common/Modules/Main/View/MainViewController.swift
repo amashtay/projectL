@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loaderVisualEffectView: UIVisualEffectView!
     
     private var viewData = [ShoppingItemViewData]()
     private let shoppingItemCellReuseName = "ShoppingItemCell"
@@ -41,10 +42,12 @@ class MainViewController: UIViewController {
         switch shoppingListState {
         case .success(shoppingList: let shoppingList):
             viewData = shoppingList
+            loaderVisualEffectView.isHidden = true
             tableView.reloadData()
         case .loading(loadingMessage: _):
-            break
+            loaderVisualEffectView.isHidden = false
         case .error(errorMessage: let errorMessage):
+            loaderVisualEffectView.isHidden = true
             showErrorInAlert(errorMessage: errorMessage)
         default:
             break

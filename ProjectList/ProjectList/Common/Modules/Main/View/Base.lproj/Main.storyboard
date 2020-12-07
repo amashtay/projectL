@@ -25,17 +25,40 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NpC-bt-KSv"/>
                                 </connections>
                             </tableView>
+                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKa-GP-nZM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hcU-QS-9lY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-DE-LmI">
+                                            <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                            <color key="color" systemColor="labelColor"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3SD-DE-LmI" firstAttribute="centerX" secondItem="hcU-QS-9lY" secondAttribute="centerX" id="BjW-bV-lrX"/>
+                                        <constraint firstItem="3SD-DE-LmI" firstAttribute="centerY" secondItem="hcU-QS-9lY" secondAttribute="centerY" id="g2a-sD-QwJ"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="prominent"/>
+                            </visualEffectView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yua-GI-Nye" secondAttribute="trailing" id="7fl-9u-sxu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GKa-GP-nZM" secondAttribute="trailing" id="8jS-aj-hNE"/>
+                            <constraint firstAttribute="bottom" secondItem="GKa-GP-nZM" secondAttribute="bottom" id="IeQ-Zd-AiY"/>
                             <constraint firstAttribute="bottom" secondItem="Yua-GI-Nye" secondAttribute="bottom" id="KWf-fi-ueY"/>
+                            <constraint firstItem="GKa-GP-nZM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Mkh-Xc-eQC"/>
                             <constraint firstItem="Yua-GI-Nye" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xl9-HA-IA2"/>
                             <constraint firstItem="Yua-GI-Nye" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pny-Bj-NUd"/>
+                            <constraint firstItem="GKa-GP-nZM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="unr-fa-Uch"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loaderVisualEffectView" destination="GKa-GP-nZM" id="caI-ww-JPY"/>
                         <outlet property="tableView" destination="Yua-GI-Nye" id="37t-sg-gdu"/>
                     </connections>
                 </viewController>
@@ -45,6 +68,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
