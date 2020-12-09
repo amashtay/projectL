@@ -43,7 +43,6 @@ extension MainViewModel: MainViewModelProtocol {
                 self.shoppingList = .error(errorMessage: errorMessage)
             }
         }
-        print("TEST")
     }
     
 }
