@@ -14,7 +14,7 @@ class MainModuleWireframe {
         let controller = storyboard.instantiateInitialViewController()
         
         if let controller = controller as? MainViewController {
-            let viewModel = MainViewModel(apiService: MockStoreService())
+            let viewModel = MainViewModel(storeService: MockStoreService())
             controller.viewModel = viewModel
         }
         return controller
