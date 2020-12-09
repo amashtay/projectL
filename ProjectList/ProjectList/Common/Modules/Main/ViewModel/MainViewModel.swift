@@ -27,6 +27,7 @@ class MainViewModel {
 extension MainViewModel: MainViewModelProtocol {
 
     func viewModelUpdate() {
+        self.shoppingList = .loading(loadingMessage: nil)
         storeService.loadShoppingList { [weak self] result in
             guard let self = self else { return }
             switch result {
