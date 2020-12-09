@@ -19,8 +19,8 @@ class MainViewModel {
     }
     
     // MARK: Initializer
-    required init(apiService: StoreServiceProtocol) {
-        self.storeService = apiService
+    required init(storeService: StoreServiceProtocol) {
+        self.storeService = storeService
     }
 }
 
@@ -37,6 +37,9 @@ extension MainViewModel: MainViewModelProtocol {
                                          comment: entity.comment,
                                          count: entity.count) {
                         //router.routeToAnotherModule(withModel: entity)
+                        self.storeService.delete(shoppingItem: entity) { result in
+                            if (result) { self.viewModelUpdate() }
+                        }
                         print("\(entity.name) selected")
                     }
                 }))
